@@ -136,7 +136,7 @@ public class Stats {
 			System.out.println("number: " + num[i]);
 		}
 	
-		for(int i = num.length/2; i > num.length/2; i-- ) {			
+		for(int i = num.length - 1; i >= num.length/2; i-- ) {			
 			arrayq3[count] = num[i];
 			count++;
 			System.out.println("q3 number: " + num[i] );
