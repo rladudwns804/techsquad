@@ -126,10 +126,7 @@ public class Stats {
 		q1 = getMedian(arrayq1);
 		q3 = getMedian(arrayq3);
 		iqr = q3-q1;
-		System.out.println("iqr" + iqr);
-		System.out.println("q1 " + q1);
-		System.out.println("q3 " + q3);
-		q1out = (int) (q1+1.5*iqr);
+		q1out = (int) (q1-1.5*iqr);
 		q3out = (int) (q3+1.5*iqr);		
 		System.out.println("Q1 outliers: " +  q1out + " Q3 outliers: " + q3out);	
 	}	
