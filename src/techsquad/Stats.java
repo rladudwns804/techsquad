@@ -11,18 +11,15 @@ public class Stats {
 		
 		if(sorted.length%2!=0) {
 			return median = sorted[place];
-		}
-		
+		}	
 		else {
 			median = ((sorted[place] + sorted[place +1])/2 );
 			return median;
-		}
-	
-		
-	}
+		}	
+	}	
 	
 	public static int[] sort(int[] num) {
-		for(int i = 1; i < num.length; i++) {
+		for(int i = 0; i < num.length; i++) {
 			for(int j = i + 1;  j < num.length; j++) {
 				if (num[i] > num[j]) {
 					
@@ -102,8 +99,7 @@ public class Stats {
 		
 		int variance = testVariance(num);
 		
-		return (int) Math.sqrt(variance);
-		
+		return (int) Math.sqrt(variance);	
 	}
 	
 	public static void testIQR(int[] num) {
@@ -117,17 +113,16 @@ public class Stats {
 		int q1out = 0;
 		int q3out = 0;
 		int count = 0;
-		System.out.println("size = " +size);
-		
-		for(int i =0; i < num.length/2; i++) {
+	
+		System.out.println("size = " +size);		
+		for(int i =0; i < size; i++) {
 			arrayq1[i] = num[i];
-			System.out.println("number: " + num[i]);
+		
 		}
 	
-		for(int i = num.length - 1; i >= num.length/2; i-- ) {			
+		for(int i = num.length - 1; i > num.length/2; i-- ) {			
 			arrayq3[count] = num[i];
 			count++;
-			System.out.println("q3 number: " + num[i] );
 		}
 		
 		q1 = getMedian(arrayq1);
@@ -137,9 +132,7 @@ public class Stats {
 		System.out.println("q1 " + q1);
 		System.out.println("q3 " + q3);
 		q1out = (int) (q1+1.5*iqr);
-		q3out = (int) (q3+1.5*iqr);
-			
-		System.out.println("Q1 outliers: " +  q1out + " Q3 outliers: " + q3out);
-			
+		q3out = (int) (q3+1.5*iqr);		
+		System.out.println("Q1 outliers: " +  q1out + " Q3 outliers: " + q3out);	
 	}	
 }

@@ -4,7 +4,7 @@ public class StatTest {
 
 	public static void main(String args[]) {
 		
-		int[] a = {-30 -1, 0, 3, 7, 8, 10, 12, 16, 20, 25, 27, 28, 32, 60};
+		int[] a = {-30 , -1, 0, 3, 7, 8, 10, 12, 16, 20, 25, 27, 28, 32, 60};
 		
 		System.out.println(Stats.getMedian(a));
 		System.out.println(Stats.getMean(a));
