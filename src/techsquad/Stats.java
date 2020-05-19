@@ -14,7 +14,7 @@ public class Stats {
 		}
 		
 		else {
-			median = (sorted[place] );
+			median = ((sorted[place] + sorted[place +1])/2 );
 			return median;
 		}
 	
@@ -34,10 +34,7 @@ public class Stats {
 		}
 		return num;
 	}
-	
-	
-	
-	
+
 	public static int getMode(int[] num) {
 		
 		int maxcount = 0;
@@ -60,8 +57,6 @@ public class Stats {
 		return value; 
 	}
 	
-	
-	
 	public static int getMean(int[] num) {
 		
 		int median = 0;
@@ -69,11 +64,8 @@ public class Stats {
 		for(int i : num) {
 			median += i;
 		}
-		
 		median = median/num.length;
-		
-		return median;
-		
+		return median;	
 	}
 	
 	public static void testRange(int[] num) {
@@ -89,14 +81,10 @@ public class Stats {
 					num[j] = temp;
 				}
 			}
-		}
-		
-		
+		}	
 		min = num[0];
 		max = num[num.length-1];
 		System.out.println(min +" " + max);
-		
-
 	}
 	
 	public static int testVariance(int[] num) {
@@ -150,15 +138,8 @@ public class Stats {
 		System.out.println("q3 " + q3);
 		q1out = (int) (q1+1.5*iqr);
 		q3out = (int) (q3+1.5*iqr);
-		
-		
+			
 		System.out.println("Q1 outliers: " +  q1out + " Q3 outliers: " + q3out);
-		
-		
-	
-		
-	}
-	
-	
-	
+			
+	}	
 }
