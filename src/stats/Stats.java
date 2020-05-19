@@ -49,9 +49,9 @@ public class Stats {
 			
 			int count = 0;
 			
-			for(int j = 0;  j < num.length; ++j) {
+			for(int j = 0;  j < num.length; j++) {
 				if (num[i] == num[j]) {
-					++count;
+					count++;
 				}
 			}
 			if (count > maxcount) {
@@ -124,12 +124,10 @@ public class Stats {
 		for(int i =0; i < size; i++) {
 			arrayq1[i] = sorted[i];	
 		}
-	
 		for(int i = num.length - 1; i > size; i-- ) {			
 			arrayq3[count] = sorted[i];
 			count++;
-		}
-		
+		}	
 		q1Median = getMedian(arrayq1);
 		q3Median = getMedian(arrayq3);
 		iqr = q3Median - q1Median;
