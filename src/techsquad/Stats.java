@@ -113,15 +113,13 @@ public class Stats {
 		int q1out = 0;
 		int q3out = 0;
 		int count = 0;
-	
-		System.out.println("size = " +size);		
+			
 		for(int i =0; i < size; i++) {
-			arrayq1[i] = num[i];
-		
+			arrayq1[i] = sorted[i];	
 		}
 	
-		for(int i = num.length - 1; i > num.length/2; i-- ) {			
-			arrayq3[count] = num[i];
+		for(int i = num.length - 1; i > size; i-- ) {			
+			arrayq3[count] = sorted[i];
 			count++;
 		}
 		
