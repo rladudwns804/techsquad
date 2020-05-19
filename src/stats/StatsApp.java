@@ -1,6 +1,6 @@
-package techsquad;
+package stats;
 
-public class StatTest {
+public class StatsApp {
 
 	public static void main(String args[]) {
 		
@@ -9,10 +9,10 @@ public class StatTest {
 		System.out.println(Stats.getMedian(a));
 		System.out.println(Stats.getMean(a));
 		System.out.println(Stats.getMode(a));
-		Stats.testRange(a);
+		
 		System.out.println(Stats.testVariance(a));
 		System.out.println(Stats.testStdDev(a));
-		Stats.testIQR(a);
+	
 		
 	}
 }

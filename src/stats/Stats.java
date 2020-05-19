@@ -1,13 +1,33 @@
-package techsquad;
+package stats;
+import util.Util;
 
 public class Stats {
+	
+	private static int iqr;
+	private static int q1;
+	private static int q3;
+	
+
+	
+	public static int getIqr() {
+		return iqr;
+	}
+
+	public static int getQ1() {
+		return q1;
+	}
+
+	public static int getQ3() {
+		return q3;
+	}
+
 
 	public static int getMedian(int[] num) {
 	
 		int median = 0;
 		int place = num.length/2;
 		
-		int[] sorted = sort(num);
+		int[] sorted = Util.sort(num);
 		
 		if(sorted.length%2!=0) {
 			return median = sorted[place];
@@ -18,19 +38,7 @@ public class Stats {
 		}	
 	}	
 	
-	public static int[] sort(int[] num) {
-		for(int i = 0; i < num.length; i++) {
-			for(int j = i + 1;  j < num.length; j++) {
-				if (num[i] > num[j]) {
-					
-					int temp = num[i];
-					num[i] = num[j];
-					num[j] = temp;
-				}
-			}
-		}
-		return num;
-	}
+
 
 	public static int getMode(int[] num) {
 		
@@ -65,9 +73,10 @@ public class Stats {
 		return median;	
 	}
 	
-	public static void testRange(int[] num) {
+	public static int testRange(int[] num) {
 		int min = 0;
 		int max = 0;
+		int range = 0;
 		for(int i = 0; i< num.length; i++) {
 			
 			for(int j = i+1; j<num.length; j++) {
@@ -81,7 +90,8 @@ public class Stats {
 		}	
 		min = num[0];
 		max = num[num.length-1];
-		System.out.println(min +" " + max);
+		range = max - min;
+		return range;
 	}
 	
 	public static int testVariance(int[] num) {
@@ -103,15 +113,12 @@ public class Stats {
 	}
 	
 	public static void testIQR(int[] num) {
-		int[] sorted = sort(num);
+		int[] sorted = Util.sort(num);
 		int size = num.length/2;
 		int[] arrayq1= new int[size]; 
 		int[] arrayq3 = new int[size];
-		int q1 = 0;
-		int q3 =0;
-		int iqr = 0;
-		int q1out = 0;
-		int q3out = 0;
+		int q1Median = 0;
+		int q3Median = 0;
 		int count = 0;
 			
 		for(int i =0; i < size; i++) {
@@ -123,11 +130,10 @@ public class Stats {
 			count++;
 		}
 		
-		q1 = getMedian(arrayq1);
-		q3 = getMedian(arrayq3);
-		iqr = q3-q1;
-		q1out = (int) (q1-1.5*iqr);
-		q3out = (int) (q3+1.5*iqr);		
-		System.out.println("Q1 outliers: " +  q1out + " Q3 outliers: " + q3out);	
+		q1Median = getMedian(arrayq1);
+		q3Median = getMedian(arrayq3);
+		iqr = q3Median - q1Median;
+		q1 = (int) (q1Median-1.5*iqr);
+		q3 = (int) (q3Median+1.5*iqr);		
 	}	
 }
